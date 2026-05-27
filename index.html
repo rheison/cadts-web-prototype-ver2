@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecureDestroy CADTS Web Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section id="authRoot" class="auth-root"></section>
+  <div id="appShell" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">SD</div>
+        <div>
+          <h1>SecureDestroy</h1>
+          <p>CADTS Web Prototype</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-link active" data-view="dashboard">Dashboard</button>
+        <button class="nav-link" data-view="assets">Asset Registry</button>
+        <button class="nav-link" data-view="requests">Destruction Requests</button>
+        <button class="nav-link" data-view="approvals">Approval Queue</button>
+        <button class="nav-link" data-view="evidence">Evidence & Closure</button>
+        <button class="nav-link" data-view="certificates">Certificates</button>
+        <button class="nav-link" data-view="reports">Reports</button>
+        <button class="nav-link" data-view="audit">Audit Log</button>
+        <button class="nav-link" data-view="users">Users & Roles</button>
+        <button class="nav-link" data-view="about">About Prototype</button>
+      </nav>
+
+      <div class="sidebar-card" id="currentUserPanel">
+        <p class="eyebrow">Signed in</p>
+        <h3 id="currentUserName">Demo User</h3>
+        <p id="currentUserRole" class="muted">Role</p>
+        <button id="logoutBtn" class="secondary full-width">Log Out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Cloud Asset Destruction Tracking System</p>
+          <h2 id="viewTitle">Dashboard</h2>
+        </div>
+        <div class="topbar-actions">
+          <button id="resetDemoBtn" class="secondary">Reset Demo Data</button>
+          <button id="exportAllBtn">Export Audit CSV</button>
+        </div>
+      </header>
+
+      <section id="alertArea"></section>
+      <section id="viewRoot" class="view-root"></section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
